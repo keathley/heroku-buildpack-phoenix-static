@@ -84,7 +84,8 @@ install_and_cache_npm_deps() {
     cp -r $cache_dir/node_modules/* node_modules/
   fi
 
-  npm install --quiet --unsafe-perm --userconfig $build_dir/npmrc 2>&1 | indent
+  npm prune
+  npm install --unsafe-perm --userconfig $build_dir/npmrc 2>&1 | indent
   npm rebuild 2>&1 | indent
   npm --unsafe-perm prune 2>&1 | indent
   cp -r node_modules $cache_dir
