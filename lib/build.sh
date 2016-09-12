@@ -4,6 +4,7 @@ cleanup_cache() {
     info "Cleaning out cache contents"
     rm -rf $cache_dir/npm-version
     rm -rf $cache_dir/node-version
+    rm -rf $cache_dir/node_modules
     cleanup_old_node
   fi
 }
